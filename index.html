@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohail - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        body {
+            background-color: #121212; /* Dark background for the whole page */
+            color: #fff; /* Universal text color set to white */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        a {
+            color: #fff; /* All links are white */
+            text-decoration: none; /* No underline by default */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover for better visibility */
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            height: 100vh;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('/assets/bg.jpeg') no-repeat center center / cover;
+            filter: blur(3px);
+            z-index: 1;
+        }
+
+        .container, .profile-pic, .text-center {
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-transparent {
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            color: white;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            padding: 4px 0;
+            z-index: 10;
+        }
+
+        .nav-text a {
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .nav-text a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .text-background {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background with slight transparency */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 4px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Specific styles for non-hero sections */
+        .section-style h2 {
+            font-size: 28px; /* Set font size for headings */
+        }
+
+        .section-style h3 {
+            font-size: 22px; /* Set font size for headings */
+        }
+
+        .section-style p, .section-view a, .section-style li {
+            font-size: 20px; /* Set font size for body text, links, and list items */
+        }
+
+        /* Existing Work/Projects Section CSS updates */
+        #work .text-box {
+            background-color: #333;
+        }
+
+        .skills-container {
+            display: flex;         /* Using Flexbox */
+            flex-wrap: wrap;       /* Allow badges to wrap onto the next line */
+            justify-content: center; /* Center badges within the container */
+            align-items: center;   /* Align badges vertically */
+            gap: 24px;             /* Space between badges */
+        }
+
+        .skills-badge {
+            transform: scale(1.8); /* Increase the size by 20% */
+            margin: 50px;           /* Increase margin around badges */
+            transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .skills-badge {
+                transform: scale(1); /* Smaller scale on smaller screens */
+            }
+        }
+
+        .interest-badge {
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark text for contrast */
+            border-radius: 15px; /* Rounded corners */
+            display: inline-flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            font-size: 22px; /* Adjust size as needed */
+            font-weight: bold; /* Make text bold */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for 3D effect */
+        }
+
+        .interest-badge i {
+            color: #555; /* Slightly darker color for the icon */
+            font-size: 20px; /* Larger size for icon */
+        }
+
+        .interest-badge:hover {
+            background-color: #e2e2e2; /* Slightly darker background on hover */
+            transform: scale(1.05); /* Slightly increase size on hover */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .swiper {
+            width: 60%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            alignya-item-center;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-transparent fixed w-full text-black-800 p-4 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="font-bold text-shadow"></a>
+            <div class="nav-text">
+                <a href="#work" class="px-4 hover:underline">Work/Projects</a>
+                <a href="#papers" class="px-4 hover:underline">Papers</a>
+                <a href="#skills" class="px-4 hover:underline">Skills & Areas of interest</a>
+                <a href="#talks" class="px-4 hover:underline">Talks</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-gray-700 body-font h-screen flex items-center justify-center">
+        <div class="hero-background"></div>
+        <div class="container mx-auto flex flex-col items-center justify-center h-full">
+            <img src="/assets/pic1.JPG" alt="Profile Picture" class="profile-pic">
+            <div class="text-background">
+                <h1 class="title-font text-6xl text-white font-medium mb-1">Ameer Sohail Syed</h1>
+                <!-- Icon links -->
+                <div class="social-links">
+                    <a href="https://github.com/syedameersohail" target="_blank" class="px-2">
+                        <i class="fab fa-github fa-2x"></i> <!-- GitHub Icon -->
+                    </a>
+                    <a href="mailto:youremail@example.com" class="px-2">
+                        <i class="fas fa-envelope fa-2x"></i> <!-- Email Icon -->
+                    </a>
+                    <a href="https://www.linkedin.com/in/syedameersohail" target="_blank" class="px-2">
+                        <i class="fab fa-linkedin fa-2x"></i> <!-- LinkedIn Icon -->
+                    </a>
+                    <a href="https://medium.com/@syedar.sohail" target="_blank" class="px-2">
+                        <i class="fab fa-medium fa-2x"></i> <!-- Medium Icon -->
+                    </a>
+                </div>
+                <p class="text-xl font-bold">Associate Data Engineer @ NHS | Data Scientist, Research Analyst | Actively educating people about machine learning and data visualisation</p>
+            </div>
+            <div class="mt-6">
+                <a href="#work" class="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300 ease-in-out">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+  
+    <!-- Work/Projects Section -->
+    <section id="work" class="text-white body-font bg-black section-style">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-2xl font-medium title-font text-white mb-4">Key Projects</h2>
+            </div>
+            <div class="flex flex-wrap -m-4">
+                <!-- Project 1 -->
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="text-box h-full bg-gray-800 p-8 rounded">
+                        <h2 class="text-lg font-medium title-font mb-4">OPTICA Task Management System for Hospitals</h2>
+                        <p class="leading-relaxed mb-6">I am part of a team behind the OPTICA product, where I do product development and maintainence. Together with a team of more than 20+ plus talented people, I am happy that my role is creating big impact by helping hospitals reduce wait times and make hospital discharges faster, it is all about getting more people the help they need at the hospital, faster</p>
+                        <a href="javascript:void(0)" onclick="toggleContent('opticaContent')" class="text-indigo-500 inline-flex items-center mt-3">Learn More</a>
+                    </div>
+                    <div id="opticaContent" style="display:none;">
+                        <!-- Additional detailed content -->
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="text-box h-full bg-gray-800 p-8 rounded">
+                        <h2 class="text-lg font-medium title-font mb-4">Classification and Prediction from Text Documents using Machine Learning (Healthcare)</h2>
+                        <p class="leading-relaxed mb-6">Using Natural Language Processing to classify and predict information from patient summaries.</p>
+                        <a href="javascript:void(0)" onclick="toggleContent('dataClassificationContent')" class="text-indigo-500 inline-flex items-center mt-3">Learn More</a>
+                    </div>
+                    <div id="dataClassificationContent" style="display:none;">
+                        <!-- Detailed Data Classification content -->
+                    </div>
+                </div>
+                <!-- More projects later work -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Papers Section -->
+    <section id="papers" class="text-white body-font bg-black section-style">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-2xl font-medium title-font text-white mb-4">Published Papers</h2>
+            </div>
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 md:w-full w-full">
+                    <div class="text-box h-full bg-gray-800 p-8 rounded">
+                        <h2 class="text-lg font-medium title-font mb-4">Understanding Cancer Patients with Diagnostically Influential Factors using High Dimensional Data Embedding (November 2022 The Institution of Engineering and Technology (IET))</h2>
+                        <p class="leading-relaxed mb-6">Analysing breast cancer data is a long-established research topic from both medical diagnosis and data modelling perspectives. This paper presents a comparative study aimed at providing visualized, explainable insights in breast cancer survival rate analysis and identifying critical influential factors that strongly determine the likelihood of a patient’s survival.</p>
+                        <a href="https://www.researchgate.net/publication/362505840_Understanding_Cancer_Patients_with_Diagnostically_Influential_Factors_using_High_Dimensional_Data_Embedding" class="text-indigo-500 inline-flex items-center mt-3">Read Full Paper</a>
+                        <div class="flex mt-6">
+                            <img src="/assets/pic2.jpeg" alt="Image of Book" class="w-1/4 rounded">
+                            <img src="/assets/pic3.jpeg" alt="First Page Image" class="w-1/4 rounded">
+                        </div>
+                        <div class="text-center mt-6">
+                            <span class="italic">More publications coming...</span>
+                            <a href="javascript:void(0);" class="text-lg ml-2">&#9654;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="text-white body-font bg-black section-style">
+      <div class="skills-container">
+          <h2 class="text-2xl font-medium title-font text-white mb-4">Skills & Areas of Interest</h2>
+          <div class="flex flex-wrap justify-center items-center mb-12">
+          <!-- Python -->
+          <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" class="skills-badge">
+          <!-- TypeScript -->
+          <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" class="skills-badge">
+          <!-- Scikit-Learn -->
+          <img src="https://img.shields.io/badge/-scikitlearn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" class="skills-badge">
+          <!-- PySpark -->
+          <img src="https://img.shields.io/badge/-PySpark-E25A1C?style=flat-square&logo=apache-spark&logoColor=white" alt="PySpark" class="skills-badge">
+          <!-- TensorFlow -->
+          <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" class="skills-badge">
+          <!-- PyTorch -->
+          <img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" class="skills-badge">
+          <!-- AWS Glue -->
+          <img src="https://img.shields.io/badge/-AWSGlue-FF9900?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS Glue" class="skills-badge">
+          <!-- Databricks -->
+          <img src="https://img.shields.io/badge/-Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="Databricks" class="skills-badge">
+          <!-- Anaconda -->
+          <img src="https://img.shields.io/badge/-Anaconda-44A833?style=flat-square&logo=anaconda&logoColor=white" alt="Anaconda" class="skills-badge">
+          <!-- Git -->
+          <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" class="skills-badge">
+          <!-- Docker -->
+          <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Postgres_Database-336791?style=flat-square&logo=postgresql&logoColor=white" alt="Postgres Database" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Azure_Services-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white" alt="Azure Services" class="skills-badge">
+          <!-- Azure DevOps -->
+          <img src="https://img.shields.io/badge/-AzureDevOps-0078D7?style=flat-square&logo=azure-devops&logoColor=white" alt="Azure DevOps" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Azure_Blob-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white" alt="Azure Blob Storage" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Google_Cloud-4285F4?style=flat-square&logo=google-cloud&logoColor=white" alt="Google Cloud Services" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Tableau_Desktop-3178C6?style=flat-square&logo=tableau&logoColor=white" alt="Tableau Desktop" class="skills-badge">
+          <img src="https://img.shields.io/badge/-Tableau_Prep_Builder-FF4B4B?style=flat-square&logo=tableau&logoColor=white" alt="Tableau Prep Builder" class="skills-badge">
+          <img src="https://img.shields.io/badge/-PowerBI-F2C811?style=flat-square&logo=power-bi&logoColor=white" alt="Power BI" class="skills-badge">
+          <img src="https://img.shields.io/badge/-AWS_HDInsight-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS HDInsight" class="skills-badge">
+          </div>
+          <div class="interests-container" style="text-align: center; padding: 20px;">
+              <span class="interest-badge"><i class="fas fa-rocket"></i> Model Deployments</span>
+              <span class="interest-badge"><i class="fas fa-brain"></i> Machine Learning and NLP</span>
+              <span class="interest-badge"><i class="fas fa-chart-line"></i> Data Analytics</span>
+              <span class="interest-badge"><i class="fas fa-cogs"></i> Data Pipelining</span>
+              <span class="interest-badge"><i class="fas fa-tools"></i> Debugging and Fixing Problems</span>
+              <span class="interest-badge"><i class="fas fa-search"></i> Research</span>
+              <span class="interest-badge"><i class="fas fa-book"></i> Documentation</span>
+          </div>
+
+        </div>
+    </section>
+
+    <!-- Talks -->
+    <section id="talks" class="text-center py-24 bg-black section-style">
+          <div class="container mx-auto">
+              <h2 class="text-2xl font-medium title-font text-white mb-4">Talks</h2>
+              <!-- Swiper -->
+              <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Gf4l8EdmtJ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                      <!-- More slides as you add more talks -->
+                  </div>
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+              </div>
+          </div>
+      </section>
+  <script>
+      var swiper = new Swiper('.mySwiper', {
+          loop: true,
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+      });
+  </script>
+
+
+</body>
+</html>
