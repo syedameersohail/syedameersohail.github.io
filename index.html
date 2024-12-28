@@ -107,9 +107,50 @@
         }
 
         .skills-badge {
-            transform: scale(1.8); /* Increase the size by 20% */
-            margin: 50px;           /* Increase margin around badges */
+            transform: scale(1.7); /* Increase the size by 20% */
+            margin: 60px;           /* Increase margin around badges */
             transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+        }
+
+        .social-links a {
+        color: #fff; /* Default icon color */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Subtle glow effect */
+        transition: color 0.2s ease, transform 0.2s ease; /* Smooth transition */
+        }
+
+        .social-links a:hover {
+            color: #ff6f61; /* Vibrant color on hover */
+            transform: scale(1.2); /* Slight zoom-in effect on hover */
+        }
+
+        /* Individual icon colors for better distinction */
+        .social-links .fa-github {
+            color: #4078c0;
+            transform: scale(1.2);
+        }
+
+        .social-links .fa-envelope {
+            color: #dd4b39;
+            transform: scale(1.2);
+        }
+
+        .social-links .fa-linkedin {
+            color: #0077b5;
+            transform: scale(1.2);
+        }
+
+        .social-links .fa-medium {
+            color: #00ab6c;
+            transform: scale(1.2);
+            
+        }
+
+        .project-2 .absolute {
+            background-image: url('/assets/pic4.jpeg');
+            background-color: rgba(14, 14, 14, 0.5);
+            background-blend-mode: overlay;
+            filter: blur(8px);
+            opacity: 0.5;
         }
 
         /* Responsive adjustments for smaller screens */
@@ -218,7 +259,7 @@
                         <i class="fab fa-medium fa-2x"></i> <!-- Medium Icon -->
                     </a>
                 </div>
-                <p class="text-xl font-bold">Associate Data Engineer @ NHS | Data Scientist, Research Analyst | Actively educating people about machine learning and data visualisation</p>
+                <p class="text-xl font-bold">Data Scientist @ Affinity Water | Data Scientist, Associate Data Engineer, Research Analyst | Actively educating people about machine learning and data visualisation</p>
             </div>
             <div class="mt-6">
                 <a href="#work" class="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300 ease-in-out">
@@ -239,24 +280,32 @@
             <div class="flex flex-wrap -m-4">
                 <!-- Project 1 -->
                 <div class="p-4 md:w-1/2 w-full">
-                    <div class="text-box h-full bg-gray-800 p-8 rounded">
-                        <h2 class="text-lg font-medium title-font mb-4">OPTICA Task Management System for Hospitals</h2>
-                        <p class="leading-relaxed mb-6">I am part of a team behind the OPTICA product, where I do product development and maintainence. Together with a team of more than 20+ plus talented people, I am happy that my role is creating big impact by helping hospitals reduce wait times and make hospital discharges faster, it is all about getting more people the help they need at the hospital, faster</p>
-                        <a href="javascript:void(0)" onclick="toggleContent('opticaContent')" class="text-indigo-500 inline-flex items-center mt-3">Learn More</a>
-                    </div>
-                    <div id="opticaContent" style="display:none;">
-                        <!-- Additional detailed content -->
+                    <div class="text-box h-full bg-gray-800 p-8 rounded relative overflow-hidden project-1">
+                        <h2 class="text-lg font-medium title-font mb-4">Short Term Risk Assessment for Proactive Maintainence</h2>
+                        <h3 class="text-lg font-medium title-font mb-4">Data Scientist @ Affinity Water, Hatfield</h2>
+                        <p class="leading-relaxed mb-6"> Currently, I am working on developing system for forecasting pipe failures in water networks across the north parts of London and areas in the south of England. This project focuses on saving water by identifying and preventing potential pipe bursts, which can lead to significant water loss, pollute near by water streams.  Burst pipes can also negatively impact people’s daily lives by flooding roads, causing damage to infrastructure, and creating hazardous conditions. I am happy that I make a meaningful impact on communities, protecting the environment and optimising company assets through proactive risk assessment and maintenance strategies using AI and Machine learning.</p>
                     </div>
                 </div>
                 <!-- Project 2 -->
                 <div class="p-4 md:w-1/2 w-full">
-                    <div class="text-box h-full bg-gray-800 p-8 rounded">
-                        <h2 class="text-lg font-medium title-font mb-4">Classification and Prediction from Text Documents using Machine Learning (Healthcare)</h2>
-                        <p class="leading-relaxed mb-6">Using Natural Language Processing to classify and predict information from patient summaries.</p>
-                        <a href="javascript:void(0)" onclick="toggleContent('dataClassificationContent')" class="text-indigo-500 inline-flex items-center mt-3">Learn More</a>
+                    <div class="text-box h-full bg-gray-800 p-8 rounded relative overflow-hidden project-2">
+                        <div class="absolute inset-0"></div>
+                        <div class="relative z-10">
+                        <h2 class="text-lg font-medium title-font mb-4">OPTICA Task Management System for Hospitals</h2>
+                        <h3 class="text-lg font-medium title-font mb-4">Associate Data Engineer @ NHS North of England CSU, Durham</h2>
+                        <p class="leading-relaxed mb-6">I was part of a team behind the OPTICA product, where I did product development and maintainence. Together with a team of more than 20+ plus talented people, I was happy that my role is created big impact by helping hospitals reduce wait times and make hospital discharges faster, it is all about getting more people the help they need at the hospital, faster. Some of the Trusts I worked with North Tees, Gateshead and Community Health Care Provider CHCP.</p>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7188864053740535808?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BCDt5dyEAQ02%2Bh1Nhn82SVg%3D%3D" class="text-indigo-500 inline-flex items-center mt-3 hover:underline">
+                            Learn More
+                        </a>
+                        </div>
                     </div>
-                    <div id="dataClassificationContent" style="display:none;">
-                        <!-- Detailed Data Classification content -->
+                </div>
+                <!-- Project 3 -->
+                <div class="p-4 md:w-1/2 w-full">
+                    <div class="text-box h-full bg-gray-800 p-8 rounded relative overflow-hidden project-3">
+                        <h2 class="text-lg font-medium title-font mb-4">Classification and Prediction from Text Documents using Machine Learning (Healthcare)</h2>
+                        <h3 class="text-lg font-medium title-font mb-4">Associate Data Engineer @NHS North of England CSU, Durham</h2>
+                        <p class="leading-relaxed mb-6">Using Natural Language Processing to classify and predict information from patient summaries.</p>
                     </div>
                 </div>
                 <!-- More projects later work -->
@@ -304,6 +353,10 @@
           <img src="https://img.shields.io/badge/-scikitlearn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" class="skills-badge">
           <!-- PySpark -->
           <img src="https://img.shields.io/badge/-PySpark-E25A1C?style=flat-square&logo=apache-spark&logoColor=white" alt="PySpark" class="skills-badge">
+          <!-- AWS SageMaker -->
+          <img src="https://img.shields.io/badge/-AWS%20SageMaker-232F3E?style=flat-square&logo=amazonaws&logoColor=white" alt="AWS SageMaker" class="skills-badge">
+          <!-- AWS Bedrock -->
+          <img src="https://img.shields.io/badge/-AWS%20Bedrock-FF9900?style=flat-square&logo=amazonaws&logoColor=white" alt="AWS Bedrock" class="skills-badge">
           <!-- TensorFlow -->
           <img src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" class="skills-badge">
           <!-- PyTorch -->
