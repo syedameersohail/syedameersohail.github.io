@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>Ameer Sohail Syed — ML for Water Infrastructure</title>
-    <meta name="description" content="Senior Data Scientist building production ML systems for water infrastructure. Risk models, river chemistry research, and national-scale deployments.">
+    <title>Ameer Sohail Syed | ML for Water Infrastructure</title>
+    <meta name="description" content="Senior Data Scientist working on ML for water infrastructure. Pipe risk models and river chemistry research.">
     <meta name="author" content="Ameer Sohail Syed">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -564,7 +564,7 @@
                 <div class="hero-layout">
                     <div class="hero-content">
                         <h1 class="hero-name">Ameer Sohail Syed</h1>
-                        <p class="hero-oneliner">I build ML systems for water infrastructure &mdash; from risk models scoring 300,000 pipes to national-scale river chemistry research.</p>
+                        <p class="hero-oneliner">I build ML systems that help water companies figure out which pipes to replace and what's going on in their rivers.</p>
                         <div class="hero-links">
                             <a href="https://github.com/syedameersohail" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -591,9 +591,11 @@
                 <p class="section-label">Featured Work</p>
 
                 <article class="project-card">
-                    <p class="hero-metric">300,000 pipes scored by failure likelihood</p>
-                    <h3 class="project-title">PRISM &mdash; Proactive Infrastructure Risk Scoring Model</h3>
-                    <p class="project-desc">XGBoost ranking pipeline deployed on AWS SageMaker for Affinity Water. Scores every pipe in the network by burst probability. Built the scheme builder (v3) that converts risk scores into renewal investment plans using unit-rate cost lookups by surface type, diameter, and material. Optimisation uses benefit/cost ratio walk. Being used to compare AI-generated schemes against historically built schemes for director-level investment decisions.</p>
+                    <p class="hero-metric">From months of manual planning to automated renewal schemes in hours</p>
+                    <h3 class="project-title">PRISM: Proactive Infrastructure Risk Scoring Model</h3>
+                    <p class="project-desc">Water companies need to decide which pipes to replace and when. Before PRISM, that planning was mostly manual. Engineers spent weeks assembling renewal schemes from spreadsheets, local knowledge, and burst records. It was slow and hard to justify at director level.</p>
+                    <p class="project-desc">PRISM scores every pipe in Affinity Water's network by failure likelihood using XGBoost, trained on burst history, pipe material, age, soil type, pressure, and traffic loading. The model is half the system. The scheme builder (v3) takes those risk scores and assembles actual investment plans, joining unit rate cost lookups by surface type, diameter, and material, then walking a benefit/cost ratio curve to find the best value packages.</p>
+                    <p class="project-desc">The output goes into comparison tables where AI generated schemes sit next to historically built ones, so leadership can see what the model would have done differently. A planning cycle that took months now takes hours.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">XGBoost</span>
@@ -608,7 +610,7 @@
                 <article class="project-card">
                     <p class="hero-metric">6.88M observations across 10,448 monitoring sites</p>
                     <h3 class="project-title">River Chemical Fingerprints of England</h3>
-                    <p class="project-desc">Independent research using Environment Agency freshwater monitoring data. Built chemical fingerprint vectors for every monitoring site in England using UMAP dimensionality reduction across a 12-feature common-core chemical panel. Validated against WFD Cycle 3 typology. Paper submitted to Water Research (VSI: AI for SWM).</p>
+                    <p class="project-desc">England has over 10,000 river monitoring sites generating millions of chemical readings, but there was no systematic effort to build site level chemical fingerprints from that archive. This project does that. Using UMAP dimensionality reduction across a 12-feature common core panel, I built fingerprint vectors for every monitoring site and validated them against WFD Cycle 3 typology. Paper submitted to Water Research (VSI: AI for SWM).</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">UMAP</span>
@@ -622,8 +624,8 @@
 
                 <article class="project-card">
                     <p class="hero-metric">Deployed across 20+ NHS Trusts nationally</p>
-                    <h3 class="project-title">OPTICA &mdash; NHS Federated Data Platform</h3>
-                    <p class="project-desc">Part of the &pound;480M Palantir Federated Data Platform contract. Worked on the OPTICA patient discharge tracking application &mdash; L1/L2/L3 support, deployments, and maintenance in an Agile team of 20+. Built with PySpark and TypeScript. Helped hospitals reduce discharge wait times at trusts including North Tees, Gateshead, and CHCP.</p>
+                    <h3 class="project-title">OPTICA: NHS Federated Data Platform</h3>
+                    <p class="project-desc">OPTICA is a patient discharge tracking application, part of the &pound;480M Palantir Federated Data Platform contract for the NHS. It helps hospitals track discharges and reduce wait times, and runs at over 20 trusts nationally, including North Tees and Gateshead. I was one member of a team of 20+, covering L1/L2/L3 support and deployments.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">PySpark</span>
                         <span class="tech-tag">TypeScript</span>
@@ -634,10 +636,10 @@
                 <article class="project-card">
                     <p class="hero-metric">Predicting carbon breakthrough in treatment vessels</p>
                     <h3 class="project-title">PFAS Carbon Vessel Remaining Useful Life</h3>
-                    <p class="project-desc">ML model for predicting remaining useful life of carbon vessels used in PFAS water treatment. Framed as a sequential dependency problem with mixed-frequency sensor data. Currently in development.</p>
+                    <p class="project-desc">ML model for predicting remaining useful life of carbon vessels used in PFAS water treatment. Framed as a sequential dependency problem with mixed frequency sensor data. Currently in development.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Time-series ML</span>
+                        <span class="tech-tag">Time series ML</span>
                     </div>
                     <!-- TODO: Update when project progresses -->
                 </article>
@@ -652,16 +654,16 @@
                 <article class="pub-card">
                     <span class="status-badge">Under Review</span>
                     <h3 class="pub-title">AI-derived chemical signatures for network-scale river monitoring: A case study of England's routine water-quality archive</h3>
-                    <p class="pub-venue">Water Research &mdash; Virtual Special Issue: AI for Sustainable Water Management</p>
-                    <p class="pub-desc">Presents a method for constructing chemical fingerprint vectors from routine freshwater monitoring data using UMAP dimensionality reduction, validated against WFD Cycle 3 typology across England's monitoring network.</p>
+                    <p class="pub-venue">Water Research, Virtual Special Issue: AI for Sustainable Water Management</p>
+                    <p class="pub-desc">Uses routine freshwater monitoring data to build chemical fingerprint vectors for every river monitoring site in England, then validates them against WFD Cycle 3 typology.</p>
                 </article>
 
                 <article class="pub-card">
                     <h3 class="pub-title">Understanding Cancer Patients with Diagnostically Influential Factors using High Dimensional Data Embedding</h3>
                     <p class="pub-venue">The Institution of Engineering and Technology (IET), November 2022</p>
-                    <p class="pub-desc">Comparative study providing visualised, explainable insights in breast cancer survival rate analysis and identifying critical influential factors using high-dimensional data embedding.</p>
+                    <p class="pub-desc">Studies breast cancer survival rates and which diagnostic factors matter most. Uses high dimensional data embedding to make the analysis visual and interpretable.</p>
                     <a href="https://www.researchgate.net/publication/362505840_Understanding_Cancer_Patients_with_Diagnostically_Influential_Factors_using_High_Dimensional_Data_Embedding" class="project-link" target="_blank" rel="noopener">Read on ResearchGate &rarr;</a>
-                    <img src="assets/pic2.jpeg" alt="IET Book Cover — Understanding Cancer Patients with Diagnostically Influential Factors" class="pub-image" loading="lazy">
+                    <img src="assets/pic2.jpeg" alt="IET Book Cover, Understanding Cancer Patients with Diagnostically Influential Factors" class="pub-image" loading="lazy">
                 </article>
             </div>
         </section>
@@ -673,14 +675,14 @@
 
                 <article class="talk-card">
                     <h3 class="talk-event">AWS Summit London 2026</h3>
-                    <p class="talk-meta">Co-presented on PRISM AI &mdash; ML-driven pipe failure prediction for water infrastructure.</p>
+                    <p class="talk-meta">Co-presented on PRISM AI, covering how ML is used for pipe failure prediction at Affinity Water.</p>
                     <!-- TODO: Add photo from event, embed video if available -->
                     <div class="media-placeholder">Event photo or video embed</div>
                 </article>
 
                 <article class="talk-card">
                     <h3 class="talk-event">British Water Data Conference</h3>
-                    <p class="talk-meta">Presented on ML for water infrastructure &mdash; applying machine learning to operational challenges in the water sector.</p>
+                    <p class="talk-meta">Presented on applying machine learning to operational problems in the water sector.</p>
                     <!-- TODO: Add photo, link to any recording -->
                     <div class="media-placeholder">Event photo or recording link</div>
                 </article>
