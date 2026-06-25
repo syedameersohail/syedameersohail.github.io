@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <title>Ameer Sohail Syed | ML for Water Infrastructure</title>
-    <meta name="description" content="Senior Data Scientist working on ML for water infrastructure. Pipe risk models and river chemistry research.">
+    <meta name="description" content="Senior Data Scientist working on ML for water asset management. Criticality ranking, renewals planning, river chemistry research.">
     <meta name="author" content="Ameer Sohail Syed">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -564,7 +564,7 @@
                 <div class="hero-layout">
                     <div class="hero-content">
                         <h1 class="hero-name">Ameer Sohail Syed</h1>
-                        <p class="hero-oneliner">I build ML systems that help water companies figure out which pipes to replace and what's going on in their rivers.</p>
+                        <p class="hero-oneliner">I work on ML for water asset management. The problems are about criticality, consequence of failure, and where to put capital. The models just help answer those questions faster.</p>
                         <div class="hero-links">
                             <a href="https://github.com/syedameersohail" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -588,14 +588,13 @@
         <!-- Featured Work -->
         <section id="work" class="section-border">
             <div class="container">
-                <p class="section-label">Featured Work</p>
+                <p class="section-label">Work</p>
 
                 <article class="project-card">
-                    <p class="hero-metric">From months of manual planning to automated renewal schemes in hours</p>
+                    <p class="hero-metric">Automated asset criticality ranking for mains renewal planning</p>
                     <h3 class="project-title">PRISM: Proactive Infrastructure Risk Scoring Model</h3>
-                    <p class="project-desc">Water companies need to decide which pipes to replace and when. Before PRISM, that planning was mostly manual. Engineers spent weeks assembling renewal schemes from spreadsheets, local knowledge, and burst records. It was slow and hard to justify at director level.</p>
-                    <p class="project-desc">PRISM scores every pipe in Affinity Water's network by failure likelihood using XGBoost, trained on burst history, pipe material, age, soil type, pressure, and traffic loading. The model is half the system. The scheme builder (v3) takes those risk scores and assembles actual investment plans, joining unit rate cost lookups by surface type, diameter, and material, then walking a benefit/cost ratio curve to find the best value packages.</p>
-                    <p class="project-desc">The output goes into comparison tables where AI generated schemes sit next to historically built ones, so leadership can see what the model would have done differently. A planning cycle that took months now takes hours.</p>
+                    <p class="project-desc">Mains renewal planning is an asset management problem. Which pipes carry the most operational risk, and where should capital go? Asset managers and scheme planners were already answering these questions, but through condition grading tables, spreadsheets, and local knowledge. It varied between regions and was hard to defend at board level.</p>
+                    <p class="project-desc">PRISM automates the criticality ranking. An XGBoost model scores every pipe in Affinity Water's network by failure likelihood, trained on burst history, material, age, soil conditions, pressure, and traffic loading. The scheme builder (v3) takes those scores and assembles renewal investment plans, joining unit rate cost lookups by surface type, diameter, and material, then walking a benefit/cost curve to find the best value packages for capital planning. The output goes into director level comparison tables where AI generated schemes sit next to historically built ones. What used to take months of manual work now takes hours.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">XGBoost</span>
@@ -631,17 +630,6 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Palantir Foundry</span>
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <p class="hero-metric">Predicting carbon breakthrough in treatment vessels</p>
-                    <h3 class="project-title">PFAS Carbon Vessel Remaining Useful Life</h3>
-                    <p class="project-desc">ML model for predicting remaining useful life of carbon vessels used in PFAS water treatment. Framed as a sequential dependency problem with mixed frequency sensor data. Currently in development.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Time series ML</span>
-                    </div>
-                    <!-- TODO: Update when project progresses -->
                 </article>
             </div>
         </section>
